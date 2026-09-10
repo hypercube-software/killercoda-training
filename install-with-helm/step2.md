@@ -2,7 +2,7 @@ Dans cette seconde étape, on va explorer les "values"
 
 # Les Values
 
-C'est tout simplement une façon de paramétriser un setup. 
+C'est tout simplement une façon de paramétriser un setup.
 Comme exemple, on va paramétriser le nombre de replicas.
 
 Créer un fichier `mon-app/values.yaml` (et pas `mon-app/values.yml` !)
@@ -70,7 +70,7 @@ Vérifier que les pods ne tournent plus :
 
 `kubectl get pods -l app=web`{{exec}}
 
-# Aller plus loin 
+# Aller plus loin
 
 Helm c'est juste un moteur de template.
 
@@ -158,7 +158,7 @@ metadata:
 app.kubernetes.io/instance: demo-release
 ```
 
-Il n'y a qu'une règle importante à comprendre : 
+Il n'y a qu'une règle importante à comprendre :
 
 Le fichier **Values.yaml** ne peut pas lui-même être une template.
 
