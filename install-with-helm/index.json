@@ -1,5 +1,5 @@
 {
-  "title": "Premier pod",
+  "title": "Premiere install Helm",
   "description": "On va créer un pod dans un Kubernetes à 1 node",
   "details": {
     "intro": {
@@ -8,20 +8,8 @@
     },
     "steps": [
       {
-        "title": "Lister les pods",
+        "title": "Installer avec Helm",
         "text": "step1.md"
-      },
-      {
-        "title": "Créer son pod",
-        "text": "step2.md"
-      },
-      {
-        "title": "Créer son pod en YAML",
-        "text": "step3.md"
-      },
-      {
-        "title": "Descripteur de déploiement",
-        "text": "step4.md"
       }
     ],
     "finish": {

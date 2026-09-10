@@ -23,12 +23,14 @@ Utiliser k9s pour inspecter le cluster
 
 Run `k9s`{{exec}}
 
-Selectionner notre pod et faire ENTER, on va dans le detail du container
+Faire ":" puis taper `pods`
+
+Sélectionner notre pod et faire ENTER, on va dans le detail du container
 
 Faire à nouveau ENTER, on entre dans le log du container
 
 Faire ESC deux fois pour revenir au pod
 
-Daire "e" pour voir son descripteur YAML
+Faire "e" pour voir son descripteur YAML
 
-On va maintenant recommancer en faisant notre propre descripteur...
+On va maintenant recommencer en faisant notre propre descripteur...
