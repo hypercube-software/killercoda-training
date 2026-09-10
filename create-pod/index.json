@@ -1,0 +1,25 @@
+{
+  "title": "first pod",
+  "description": "Use a simple one node Kubernetes cluster and create a pod",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "List all pods",
+        "text": "step1.md"
+      },
+      {
+        "title": "Create your pod",
+        "text": "step2.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
