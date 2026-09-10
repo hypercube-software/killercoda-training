@@ -8,6 +8,31 @@ Concrètement, cela permet de builder notre microservice Java SANS embarquer l'e
 - Faire une image docker sans `stages` produit des images très lourdes, surtout en Java (jusqu'à 1GB)
 - Cela augmente également la surface d'attaque, car il y a des outils de build dans l'image
 
+Une mauvaise image de build contient qu'une directive `FROM`
+
+```Dockerfile
+FROM eclipse-temurin:26-jdk-alpine
+
+WORKDIR /app
+
+# Copie de l'intégralité du projet (sources, wrappers, pom.xml)
+COPY . .
+
+# Donner les droits d'exécution et télécharger les dépendances + compiler
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+
+# Création d'un utilisateur non-root pour la sécurité
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser
+
+EXPOSE 8080
+
+# Exécution du JAR généré directement dans le dossier target
+ENTRYPOINT ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
+```
+
+Générez l'image Docker comme pourrait le faire une CI avec `docker build -t microservice-java:v0 .`{{exec}}
+
 Un `staged build` contient plusieurs directives `FROM`:
 
 ```Dockerfile
@@ -50,6 +75,19 @@ L'image finale ne contiendra jamais le repertoire `.m2` de maven par exemple.
 
 Générez l'image Docker comme pourrait le faire une CI avec `docker build -t microservice-java:v1 .`{{exec}}
 
+Executer `docker image ls`{{exec}} pour constater qu'elle fait 250MB contre 428MB
+
+```
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+microservice-java:v0   5e7da72fd29c        428MB             0B        
+microservice-java:v1   9f5171c78ae5        250MB             0B        
+```
+
+Installer note image dans k8s avec :
+
+`docker save microservice-java:v1 | ctr -n k8s.io images import -`{{exec}}
+
+
 Tentez de repousser l'image avec : `kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
 ```
 Error from server (AlreadyExists): pods "test-pod" already exists`
@@ -58,5 +96,6 @@ Error from server (AlreadyExists): pods "test-pod" already exists`
 Bien évidemment, on ne peut pas écraser une image en cours d'utilisation.
 
 Retirer notre pod avec : `kubectl delete pod test-pod`{{exec}}
+
 Et retenter: `kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
 

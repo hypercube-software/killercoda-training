@@ -15,8 +15,11 @@
         "title": "Installer",
         "text": "step2.md"
       },{
-        "title": "Déployer",
+        "title": "Déployer à la main",
         "text": "step3.md"
+      },{
+        "title": "Déployer avec Helm",
+        "text": "step4.md"
       }
     ],
     "finish": {

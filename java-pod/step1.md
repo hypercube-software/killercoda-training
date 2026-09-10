@@ -1,6 +1,8 @@
 Vérifier que le microservice tourne correctement
 
-Aller dans `/root/killercoda-training/microservice-1`
+Aller dans le repertoire du microservice Java (il a déjà été compilé)
+
+Executer `cd /root/killercoda-training/microservice-1`{{exec}}
 
 Executer `./mvnw spring-boot:run`{{exec}}
 

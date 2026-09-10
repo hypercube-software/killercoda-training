@@ -62,7 +62,7 @@ D'ailleurs si vous installez sur votre PC **Rancher Desktop** au lieu de **Docke
 
 Alors justement, on va utiliser maintenant `ctr` pour pousser notre image Docker dans k8s, et plus précisément dans `containerd`.
 
-Installer le conteneur dans k8s avec :
+Installer note image dans k8s avec :
 
 `docker save microservice-java:v1 | ctr -n k8s.io images import -`{{exec}}
 
@@ -79,6 +79,10 @@ Lancer temporairement un pod avec cette image :
 `kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
 
 La `pull policy` indique à k8s de "Télécharger l'image depuis le registre distant UNIQUEMENT si elle n'existe pas déjà sur la machine locale".
+
+Si on ne fait pas ça, il va tenter de chercher notre image sur... Docker Hub !
+
+On pourra tout aussi bien utiliser `Never`:
 
 | Politique | Comportement de Kubernetes | Cas d'usage principal |
 | :--- | :--- | :--- |
