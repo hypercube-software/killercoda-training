@@ -1,5 +1,5 @@
 {
-  "title": "1 Premier pod",
+  "title": "1 - Premier pod nginx",
   "description": "On va créer un pod dans un Kubernetes à 1 node",
   "details": {
     "intro": {

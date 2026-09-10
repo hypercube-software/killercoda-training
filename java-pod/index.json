@@ -1,10 +1,11 @@
 {
-  "title": "3 Premier pod Java",
+  "title": "3 - Premier pod Java",
   "description": "On va installer un pod Java dans un Kubernetes avec Helm",
   "details": {
     "intro": {
       "text": "intro.md",
-      "foreground": "tools.sh"
+      "background": "tools.sh",
+      "foreground": "wait.sh"
     },
     "steps": [
       {
@@ -13,6 +14,9 @@
       },{
         "title": "Installer",
         "text": "step2.md"
+      },{
+        "title": "Déployer",
+        "text": "step3.md"
       }
     ],
     "finish": {

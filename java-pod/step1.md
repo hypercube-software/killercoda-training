@@ -2,7 +2,7 @@ Vérifier que le microservice tourne correctement
 
 Aller dans `/root/killercoda-training/microservice-1`
 
-Executer `./mvnw spring-boot:run`
+Executer `./mvnw spring-boot:run`{{exec}}
 
 En haut à droite de l'interface KillerCoda aller dans Traffic/Ports
 

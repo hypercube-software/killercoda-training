@@ -21,10 +21,12 @@ echo "Java installation complete!"
 
 echo "Get microservice code..."
 git clone https://github.com/hypercube-software/killercoda-training
+cd ~/killercoda-training
 rm -fr create-pod install-with-helm java-pod
 chmod a+x ~/killercoda-training/microservice-1/mvnw
 
 echo "Compile microservice..."
+cd ~/killercoda-training/microservice-1/
 ./mvnw clean install
 
 echo DONE
