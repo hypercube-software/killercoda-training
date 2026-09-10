@@ -4,7 +4,7 @@ Run `mkdir -p mon-app/templates`{{exec}}
 
 Créer un fichier `Chart.yaml` dans le repertoire `mon-app`
 
-```
+```yaml
 apiVersion: v2
 name: mon-app
 description: Mon premier Chart Helm sur Killercoda
@@ -15,7 +15,7 @@ appVersion: "1.0.0"
 
 Créer ensuite un descripteur de déploiement dans `mon-app/templates/deployment.yml`
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -58,8 +58,12 @@ On peut consulter les installations avec :
 
 Vérifier que les pods tournent:
 
-`kubectl get pods -l app=web`
+`kubectl get pods -l app=web`{{exec}}
 
 On peut désinstaller avec :
 
 `helm uninstall demo-release`{{exec}}
+
+Vérifier que les pods ne tournent plus:
+
+`kubectl get pods -l app=web`{{exec}}

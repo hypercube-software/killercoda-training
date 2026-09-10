@@ -4,7 +4,7 @@ La commande `kubectl create deployment nginx-deployment --image=nginx` qu'on a u
 
 Créer un fichier `deployment.yaml`
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

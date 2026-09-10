@@ -14,7 +14,7 @@ Cette fois-ci notre pod a pris un nom générique comme `nginx-deployment-7d6869
 
 Utiliser k9s pour aller voir son YAML, on va découvrir que malgré son nom, il a un label fixe :
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -37,7 +37,7 @@ Executer `kubectl get pods --selector=app=nginx-deployment -o jsonpath='{.items[
 # Le ReplicatSet
 
 Si vous regardez le YAML du premier pod et du second, vous allez voir que le second à un ReplicaSet de déclaré
-```
+```yaml
  ownerReferences:
   - apiVersion: apps/v1
     blockOwnerDeletion: true
@@ -56,14 +56,14 @@ Comme d'habitude, utiliser "e" pour consulter le YAML
 
 Observer que dans la section `spec` le nombre de replicas est 1
 
-```
+```yaml
 spec:
     replicas: 1
 ```
 
 Et qu'il y a une section `selector` utilisant les labels qu'on a découverts juste précédemment
 
-```
+```yaml
 selector:
     matchLabels:
     app: nginx-deployment
@@ -96,7 +96,7 @@ Taper "e" pour consulter son YAML
 
 Changer le nombre de replicas à **2**:
 
-```
+```yaml
 spec:
     replicas: 2
 ```

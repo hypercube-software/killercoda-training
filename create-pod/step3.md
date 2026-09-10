@@ -2,7 +2,7 @@ On va créer un pod depuis une image docker avec notre propre YAML
 
 Créer un fichier `hello-world.yml`
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:

@@ -1,6 +1,6 @@
 {
   "title": "Premiere install Helm",
-  "description": "On va créer un pod dans un Kubernetes à 1 node",
+  "description": "On va installer des pods dans un Kubernetes avec Helm",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -10,6 +10,9 @@
       {
         "title": "Installer avec Helm",
         "text": "step1.md"
+      },{
+        "title": "Les Values",
+        "text": "step2.md"
       }
     ],
     "finish": {
