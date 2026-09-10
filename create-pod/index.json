@@ -1,18 +1,23 @@
 {
-  "title": "first pod",
-  "description": "Use a simple one node Kubernetes cluster and create a pod",
+  "title": "Premier pod",
+  "description": "On va créer un pod dans un Kubernetes à 1 noeud",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "foreground": "tools.sh"
     },
     "steps": [
       {
-        "title": "List all pods",
+        "title": "Lister les pods",
         "text": "step1.md"
       },
       {
-        "title": "Create your pod",
+        "title": "Créer son pod",
         "text": "step2.md"
+      },
+      {
+        "title": "Créer son pod en YAML",
+        "text": "step3.md"
       }
     ],
     "finish": {

@@ -17,4 +17,18 @@ Tester l'accès au pod:
 ```
 POD_IP=$(kubectl get pod hello-world -o jsonpath='{.status.podIP}')
 curl $POD_IP
-```{{exec}}
+```
+
+Utiliser k9s pour inspecter le cluster
+
+Run `k9s`{{exec}}
+
+Selectionner notre pod et faire ENTER, on va dans le detail du container
+
+Faire à nouveau ENTER, on entre dans le log du container
+
+Faire ESC deux fois pour revenir au pod
+
+Daire "e" pour voir son descripteur YAML
+
+On va maintenant recommancer en faisant notre propre descripteur...
