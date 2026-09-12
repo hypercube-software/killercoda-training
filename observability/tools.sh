@@ -10,5 +10,6 @@ cd ~/killercoda-training/tools || exit 1
 chmod a+x *.sh
 
 ./k9s.sh >> "$LOGFILE" 2>&1
+./prometheus.sh >> "$LOGFILE" 2>&1
 
 touch /tmp/done

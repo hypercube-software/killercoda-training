@@ -1,20 +1,16 @@
 {
-  "title": "2 - Première install Helm",
-  "description": "On va installer des pods dans un Kubernetes avec Helm",
+  "title": "4 - Prometheus",
+  "description": "On va monitorer notre pod java",
   "details": {
     "intro": {
       "text": "intro.md",
       "background": "tools.sh",
       "foreground": "wait.sh"
-
     },
     "steps": [
       {
-        "title": "Installer avec Helm",
+        "title": "Prometheus",
         "text": "step1.md"
-      },{
-        "title": "Les Values",
-        "text": "step2.md"
       }
     ],
     "finish": {

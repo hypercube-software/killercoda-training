@@ -3,7 +3,7 @@ rm /tmp/done
 cat << 'EOF' > /tmp/wait.sh
 #!/bin/bash
 clear
-echo "⏳ Initialisation de l'environnement (JDK, K9S, compilation maven etc..), veuillez patienter quelques minutes..."
+echo "⏳ Initialisation de l'environnement (JDK, K9S, compilation maven etc..), veuillez patienter quelques secondes..."
 
 # Enregistrement du temps de départ
 START_TIME=$SECONDS
