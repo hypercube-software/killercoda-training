@@ -1,6 +1,6 @@
 Aller dans le setup helm:
 
-Executer `cd ~/killercoda-training/microservice-1/src/main/helm/simple`
+Executer `cd ~/killercoda-training/microservice-1/src/main/helm/simple`{{exec}}
 
 On peut prévisualiser l'injection des values avec :
 

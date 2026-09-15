@@ -20,6 +20,9 @@
       },{
         "title": "Déployer avec Helm",
         "text": "step4.md"
+      },{
+        "title": "Networking",
+        "text": "step5.md"
       }
     ],
     "finish": {

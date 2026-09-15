@@ -3,6 +3,8 @@
 Avant de poursuivre, j'aimerais insister sur la bonne et la mauvaise façon de faire des Dockerfile
 
 Ce qu'on a fait précédemment est OK pour un tutoriel. Mais dans une CI, on utilisera plutôt un **Staged Build**
+- On utilise Docker pour avoir un environment de build reproductible
+- On utilise un "staged build" pour séparer cet environment du container final qu'on veut livrer
 
 Concrètement, cela permet de builder notre microservice Java SANS embarquer l'environnement de build à la fin.
 - Faire une image docker sans `stages` produit des images très lourdes, surtout en Java (jusqu'à 1GB)
@@ -83,7 +85,7 @@ microservice-java:v0   5e7da72fd29c        428MB             0B
 microservice-java:v1   9f5171c78ae5        250MB             0B        
 ```
 
-Installer note image dans k8s avec :
+Installer notre image dans k8s avec :
 
 `docker save microservice-java:v1 | ctr -n k8s.io images import -`{{exec}}
 
