@@ -33,7 +33,9 @@ EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
 ```
 
-Générez l'image Docker comme pourrait le faire une CI avec `docker build -t microservice-java:v0 .`{{exec}}
+Générez l'image Docker comme pourrait le faire une CI avec 
+
+`docker build -t microservice-java:v0 .`{{exec}}
 
 Un `staged build` contient plusieurs directives `FROM`:
 
@@ -90,7 +92,10 @@ Installer notre image dans k8s avec :
 `docker save microservice-java:v1 | ctr -n k8s.io images import -`{{exec}}
 
 
-Tentez de repousser l'image avec : `kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
+Tentez de repousser l'image avec : 
+
+`kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
+
 ```
 Error from server (AlreadyExists): pods "test-pod" already exists`
 ```
@@ -99,5 +104,7 @@ Bien évidemment, on ne peut pas écraser une image en cours d'utilisation.
 
 Retirer notre pod avec : `kubectl delete pod test-pod`{{exec}}
 
-Et retenter: `kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
+Et retenter: 
+
+`kubectl run test-pod --image=microservice-java:v1 --image-pull-policy=IfNotPresent`{{exec}}
 

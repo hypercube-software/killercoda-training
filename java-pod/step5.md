@@ -1,13 +1,16 @@
 On va maintenant monter d'un cran: parlons networking dans k8s
 
 # Compil Java 
-si vous n'avez pas encore d'image docker `microservice-1` faire :
-`docker build -t microservice-java:v1 -f src/main/Docker/Dockerfile .`{{exec}}
+Si vous n'avez pas encore d'image docker `microservice-1` faire :
 
-déployer l'image dans k8s avec:
+`docker build --no-cache -t microservice-java:v1 -f src/main/Docker/Dockerfile .`{{exec}}
+
+Déployer l'image dans k8s avec :
+
 `docker save microservice-java:v1 | ctr -n k8s.io images import -`{{exec}}
 
 déployer le pod avec:
+
 `helm install demo-java ./src/main/helm/simple/`{{exec}}
 
 # Services
@@ -50,11 +53,14 @@ spec:
 ```
 
 Installer le service avec :
+
 `kubectl apply -f service.yml`{{exec}}
 
-Vérifier qu'il est là avec:
+Vérifier qu'il est là avec :
+
 `kubectl get svc microservice-1-service`{{exec}}
-ou avec k9s en faisant ":service"
+
+Ou avec k9s en faisant ":service"
 
 On peut maintenant joindre le microservice via ce endpoint statique :
 
@@ -98,6 +104,7 @@ Attendre qu'il soit prêt avec :
   --timeout=90s`{{exec}}
 
 On trouvera deux services dans son namespace:
+
 `kubectl get svc -n ingress-nginx`{{exec}}
 
 ```
