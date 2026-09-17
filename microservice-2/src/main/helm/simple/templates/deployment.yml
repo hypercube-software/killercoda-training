@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels:
+    app: web
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"   # 1. Indique à Prometheus d'interroger ce Pod
+        prometheus.io/path: "/metrics" # 2. Spécifie le chemin explicite de notre MonitoringController
+        prometheus.io/port: "8080"     # 3. Précise le port d'écoute HTTP
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: monitoring-java
+          image: monitoring-java:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+
+          # A. Startup Probe : 12 essais × 5 secondes = 60 secondes au total
+          startupProbe:
+            httpGet:
+              path: /health/startup
+              port: 8080
+            failureThreshold: 12
+            periodSeconds: 5
+
+          # B. Readiness Probe : Retire le Pod des Endpoints du Service si échec
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3
+
+          # C. Liveness Probe : REDÉMARRE le conteneur si échec
+          livenessProbe:
+            httpGet:
+              path: /health/liveness
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3

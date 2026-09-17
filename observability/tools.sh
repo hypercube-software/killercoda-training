@@ -10,6 +10,13 @@ cd ~/killercoda-training/tools || exit 1
 chmod a+x *.sh
 
 ./k9s.sh >> "$LOGFILE" 2>&1
+./java26.sh >> "$LOGFILE" 2>&1
 ./prometheus.sh >> "$LOGFILE" 2>&1
+
+echo "Prepare microservice..." >> "$LOGFILE" 2>&1
+cd ~/killercoda-training
+chmod a+x ~/killercoda-training/microservice-2/mvnw
+cd ~/killercoda-training/microservice-2/
+./mvnw clean install >> "$LOGFILE" 2>&1
 
 touch /tmp/done

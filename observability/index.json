@@ -11,6 +11,10 @@
       {
         "title": "Prometheus",
         "text": "step1.md"
+      },
+      {
+        "title": "PromQL",
+        "text": "step2.md"
       }
     ],
     "finish": {
