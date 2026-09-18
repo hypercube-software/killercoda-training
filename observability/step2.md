@@ -12,6 +12,8 @@ Cliquer sur **Graph**
 
 Taper la requête PromQL suivante : `app_uptime_seconds`
 
+Observer les "escaliers": cela vient du fait que Prometheus inspecte notre microservice **toutes les 30 secondes**
+
 On peut aussi faire un CURL sur Prometheus comme ceci :
 
 `curl -s "http://localhost:9090/api/v1/query?query=app_uptime_seconds" | jq`{{exec}}

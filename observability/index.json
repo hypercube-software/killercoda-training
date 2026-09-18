@@ -15,6 +15,14 @@
       {
         "title": "PromQL",
         "text": "step2.md"
+      },
+      {
+        "title": "Grafana",
+        "text": "step3.md"
+      },
+      {
+        "title": "Actuator",
+        "text": "step4.md"
       }
     ],
     "finish": {
