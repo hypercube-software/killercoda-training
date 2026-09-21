@@ -1,6 +1,6 @@
 {
-  "title": "4 - Prometheus",
-  "description": "On va monitorer notre pod java",
+  "title": "4 - Logs",
+  "description": "On va collecter les logs de notre pod",
   "details": {
     "intro": {
       "text": "intro.md",
@@ -9,20 +9,11 @@
     },
     "steps": [
       {
-        "title": "Prometheus",
+        "title": "Loki",
         "text": "step1.md"
-      },
-      {
-        "title": "PromQL",
-        "text": "step2.md"
-      },
-      {
+      },{
         "title": "Grafana",
-        "text": "step3.md"
-      },
-      {
-        "title": "Actuator",
-        "text": "step4.md"
+        "text": "step2.md"
       }
     ],
     "finish": {
