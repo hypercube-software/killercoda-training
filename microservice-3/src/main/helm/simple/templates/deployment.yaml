@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: monitoring-java
-          image: monitoring-java:v2
+          image: monitoring-java:v3
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
@@ -49,3 +49,12 @@ spec:
               port: 8080
             initialDelaySeconds: 0
             periodSeconds: 5
+
+          env:
+            # URL pour l'appel récursif
+            - name: TARGET_URL
+              value: {{ .Values.config.targetUrl | quote }}
+
+            # Limite la taille du Tas JVM pour ne pas dépasser la limite de la cgroup K8s
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Xms128m -Xmx256m"

@@ -16,6 +16,9 @@ Il devrait retourner des données au format Prometheus :
 ```
 {"message":"Hello, World!","status":"success"}
 ```
+
+Compiler le microservice
+
 `docker build --no-cache -t monitoring-java:v1 -f src/main/Docker/Dockerfile .`{{exec}}
 
 Déployer l'image dans k8s avec :

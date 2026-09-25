@@ -1,0 +1,23 @@
+{
+  "title": "6 - Tracing",
+  "description": "On va tracer les appels entre microservice",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "tools.sh",
+      "foreground": "wait.sh"
+    },
+    "steps": [
+      {
+        "title": "OpenTelemetry",
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

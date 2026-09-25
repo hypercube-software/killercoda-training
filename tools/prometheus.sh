@@ -12,3 +12,11 @@ helm install prometheus prometheus-community/prometheus \
   --set kube-state-metrics.enabled=false \
   --set server.resources.requests.memory="128Mi" \
   --set server.resources.limits.memory="256Mi"
+
+echo "Wait prometheus is ready..."
+kubectl rollout status deployment/prometheus-server -n monitoring --timeout=120s
+
+echo "Wait alert manager is ready..."
+kubectl rollout status statefulset/prometheus-alertmanager -n monitoring --timeout=120s
+
+echo "Prometheus is ready."

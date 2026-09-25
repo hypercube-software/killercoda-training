@@ -1,1 +1,7 @@
 replicaCount: 2
+config:
+  # URL du service récursif K8s
+  targetUrl: "http://demo-service:8080/recursive"
+
+  # Endpoint gRPC de l'OpenTelemetry Collector
+  otelTracingEndpoint: "http://otel-collector.monitoring.svc.cluster.local:4317"
