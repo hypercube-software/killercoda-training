@@ -69,7 +69,7 @@ rm logcli-linux-amd64.zip
 
 Tester les logs avec :
 
-`kubectl port-forward svc/loki 3100:3100 -n monitoring`{{exec}}
+`kubectl port-forward svc/loki 3100:3100 -n monitoring --address 0.0.0.0`{{exec}}
 
 `export LOKI_ADDR=http://localhost:3100`{{exec}}
 

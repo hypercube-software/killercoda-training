@@ -11,7 +11,7 @@ chmod a+x *.sh
 
 ./k9s.sh >> "$LOGFILE" 2>&1
 ./java26.sh >> "$LOGFILE" 2>&1
-#./zipkin.sh >> "$LOGFILE" 2>&1
+./zipkin.sh >> "$LOGFILE" 2>&1
 #./prometheus.sh >> "$LOGFILE" 2>&1
 #./tempo.sh >> "$LOGFILE" 2>&1
 #./grafana.sh >> "$LOGFILE" 2>&1
