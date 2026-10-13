@@ -1,4 +1,6 @@
+
 # Helm setup
+Maintenant que ctl à déployé l'image docker, on peut installer le microservice avec Helm.
 
 Aller dans le setup helm:
 

@@ -1,4 +1,4 @@
-Vérifier que le microservice tourne correctement
+Vérifier que le microservice tourne correctement avant d'en faire un container
 
 Aller dans le repertoire du microservice Java (il a déjà été compilé)
 
@@ -17,3 +17,5 @@ Il devrait retourner :
 ```
 {"message":"Hello, World!","status":"success"}
 ```
+
+Stopper le microservice avant de passer à la suite

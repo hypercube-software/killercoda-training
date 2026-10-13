@@ -9,20 +9,23 @@
     },
     "steps": [
       {
-        "title": "Preparer l'image Docker",
+        "title": "Tester le code Java",
         "text": "step1.md"
       },{
-        "title": "Installer",
+        "title": "Preparer l'image Docker",
         "text": "step2.md"
       },{
         "title": "Déployer à la main",
-        "text": "step3.md"
+        "text": "step3-docker.md"
       },{
         "title": "Déployer avec Helm",
         "text": "step4-probes.md"
       },{
+        "title": "Configmap",
+        "text": "step5-configmap.md"
+      },{
         "title": "Networking",
-        "text": "step5.md"
+        "text": "step6-network.md"
       }
     ],
     "finish": {

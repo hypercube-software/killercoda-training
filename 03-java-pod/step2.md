@@ -1,4 +1,4 @@
-Image Docker
+Maintenant qu'on sait que le microservice marche, on va le mettre dans une image Docker
 
 # Build
 
